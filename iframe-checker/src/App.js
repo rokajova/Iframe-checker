@@ -15,6 +15,13 @@ function App() {
     }
   }
 
+  // let link;
+  // if (!checkIframe.slice(0, 4).includes("http")) {
+  //   link = "https://" + checkIframe;
+  // } else {
+  //   link = checkIframe;
+  // }
+
   return (
     <div className="App">
       <input
