@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [input, setInput] = useState();
   const [iframeLink, setIframeLink] = useState();
-  const [checkIframe, setCheckIframe] = useState();
 
   // Check is string is an URL
   function is_url(str) {
@@ -15,12 +15,14 @@ function App() {
     }
   }
 
-  // let link;
-  // if (!checkIframe.slice(0, 4).includes("http")) {
-  //   link = "https://" + checkIframe;
-  // } else {
-  //   link = checkIframe;
-  // }
+  function add_https(str) {
+    let link;
+    if (!str.slice(0, 4).includes("http")) {
+      return (link = "https://" + str);
+    } else {
+      return (link = str);
+    }
+  }
 
   return (
     <div className="App">
@@ -29,12 +31,16 @@ function App() {
         placeholder="Enter a link to check..."
         autoFocus
         required
-        value={iframeLink}
-        onChange={(e) => setIframeLink(e.target.value)}
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={() => setCheckIframe(iframeLink)}>CHECK</button>
-
-      <iframe src={checkIframe} />
+      <button onClick={() => setIframeLink(input)}>CHECK</button>
+      {iframeLink && (
+        <div>
+          <div>Is {add_https(iframeLink)} a valid URL? </div>
+          {is_url(iframeLink) ? <div>yes</div> : <div>no</div>}
+        </div>
+      )}
     </div>
   );
 }

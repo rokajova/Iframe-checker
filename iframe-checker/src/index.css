@@ -7,9 +7,9 @@ body {
   padding: 0;
   background: radial-gradient(
     ellipse at bottom,
-    hsl(342, 69%, 35%),
-    hsl(342, 50%, 43%),
-    hsl(268, 73%, 25%)
+    hsl(344, 7%, 68%),
+    hsl(341, 16%, 81%),
+    hsl(267, 14%, 75%)
   );
   background-attachment: fixed;
   background-size: cover;
