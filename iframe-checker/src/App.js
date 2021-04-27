@@ -25,23 +25,33 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <input
-        type="text"
-        placeholder="Enter a link to check..."
-        autoFocus
-        required
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button onClick={() => setIframeLink(input)}>CHECK</button>
-      {iframeLink && (
+    <section className="App">
+      <div className="container">
+        {" "}
         <div>
-          <div>Is {add_https(iframeLink)} a valid URL? </div>
-          {is_url(iframeLink) ? <div>yes</div> : <div>no</div>}
+          {" "}
+          <input
+            type="text"
+            placeholder="Enter a link to check..."
+            autoFocus
+            required
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
         </div>
-      )}
-    </div>
+        <div className="buttonContainer">
+          {" "}
+          <button onClick={() => setIframeLink(input)}>CHECK</button>
+        </div>
+        {iframeLink && (
+          <div>
+            <div>Is {add_https(iframeLink)} a valid URL? </div>
+            {is_url(iframeLink) ? <div>yes</div> : <div>no</div>}
+            <iframe src={add_https(iframeLink)} />
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 
