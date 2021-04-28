@@ -36,10 +36,21 @@ function App() {
       />{" "}
       <button onClick={() => setIframeLink(input)}>CHECK</button>
       {iframeLink ? (
-        <iframe className="iframe" src={add_https(iframeLink)} />
+        <>
+          {is_url(iframeLink) ? (
+            <iframe className="iframe" src={add_https(iframeLink)} />
+          ) : (
+            <div className="missingIframe">
+              Invalid URL, please use a valid URL format.
+            </div>
+          )}
+        </>
       ) : (
         <div className="missingIframe"></div>
       )}
+      <div className="footer">
+        Made by <a href="https://github.com/rokajova">rokajova</a>
+      </div>
     </div>
   );
 }

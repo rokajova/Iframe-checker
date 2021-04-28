@@ -60,4 +60,21 @@
   height: 60vh;
   background: rgba(82, 107, 139, 0.541);
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5vw;
+  color: rgb(236, 37, 37);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+}
+
+.container .footer a {
+  text-decoration: none;
+  color: white;
 }
